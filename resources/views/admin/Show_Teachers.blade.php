@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +23,44 @@
             max-width: 90%;
             max-height: 90%;
         }
+        .table-wrapper-scroll-y {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .table {
+            background-color: #fff;
+        }
+        .table th {
+            background-color: #f5f6fa;
+            color: #5c5edc;
+            font-weight: bold;
+        }
+        .table td {
+            color: #000;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
     </style>
 </head>
 <body>
@@ -31,9 +68,9 @@
         @include('admin.layout.sidebar')
         @include('admin.layout.navbar')
         <div class="container-fluid page-body-wrapper">
-            <div class="container table-wrapper-scroll-y my-custom-scrollbar">
-                <h1 style="text-align:center;color:green;font-size:30px;padding:20px;">Teacher Details</h1>
-                <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                <h1 class="text-center mt-4">Teacher Details</h1>
+                <table class="table table-striped table-bordered table-sm">
                     <thead>
                         <tr>
                             <th scope="col">S. No.</th>
@@ -49,20 +86,20 @@
                     </thead>
                     <tbody>
                         @foreach ($data as $datas)
-                        <tr style="align:center">
+                        <tr>
                             <th scope="row">{{$datas->id}}</th>
                             <td>{{$datas->name}}</td>
                             <td>{{$datas->phone}}</td>
                             <td>{{$datas->department}}</td>
                             <td>{{$datas->room}}</td>
                             <td>
-                                <img class="enlarge-image" src="{{$datas->image}}" style="height:50px; width:50px;">
+                                <img class="enlarge-image" src="{{$datas->image}}" style="height: 50px; width: 50px;">
                             </td>
                             <td>{{$datas->created_at}}</td>
                             <td>{{$datas->updated_at}}</td>
                             <td>
-                                <a class="btn btn-success" href="{{url('view',$datas->id)}}">View</a>&nbsp;
-                                <a class="btn btn-danger" href="{{url('delete',$datas->id)}}">Delete</a>
+                                <a class="btn btn-success btn-sm" href="{{url('view',$datas->id)}}">View</a>
+                                <a class="btn btn-danger btn-sm" href="{{url('delete',$datas->id)}}">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -96,5 +133,3 @@
     </div>
 </body>
 </html>
-
-
