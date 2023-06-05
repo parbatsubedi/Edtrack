@@ -15,8 +15,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/home',[HomeController::class,'redirect']);
-Route::get('/',[HomeController::class,'index']);
+// Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/',[HomeController::class,'redirect']);
 
 Route::middleware([
     'auth:sanctum',
@@ -46,5 +46,7 @@ Route::get('/showAppointments',[AdminController::class,'showAppointments']);
 
 Route::get('/view/{id}',[AdminController::class,'view']);
 Route::get('/delete/{id}',[AdminController::class,'delete']);
+Route::get('/update/{id}',[AdminController::class,'update']);
+Route::post('/editTeacher/{id}',[AdminController::class,'editTeacher']);
 
-Route::get('/news',[HomeController::class,'news']);
+// Route::get('/news',[HomeController::class,'news']);

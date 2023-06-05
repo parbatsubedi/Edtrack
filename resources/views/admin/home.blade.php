@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-@include('admin.headers')
+@include('admin.layout.headers')
   </head>
   <body>
 
     <div class="container-scroller">
-@include('admin.sidebar')
+@include('admin.layout.sidebar')
       
-@include('admin.navbar')
+@include('admin.layout.navbar')
 @include('admin.main')
-@include('admin.scripts')
+@include('admin.layout.footer')
   </body>
 </html>

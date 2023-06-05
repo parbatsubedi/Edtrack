@@ -122,7 +122,7 @@
                             <h5 class="my-3">{{$data->name}}</h5>
                             <p class="text-muted">{{$data->phone}}</p>
                             <div class="edit-profile-button">
-                                <a href="#" class="btn btn-primary">Edit Profile</a>
+                                <a href="{{url('update',$data->id)}}" class="btn btn-primary">Edit Profile</a>
                             </div>
                         </div>
                     </div>

@@ -99,7 +99,7 @@
                             <td>{{$datas->updated_at}}</td>
                             <td>
                                 <a class="btn btn-success btn-sm" href="{{url('view',$datas->id)}}">View</a>
-                                <a class="btn btn-danger btn-sm" href="{{url('delete',$datas->id)}}">Delete</a>
+                                <a class="btn btn-danger btn-sm" onclick="return confirm('are you sure to Delete Teacher!!!')" href="{{url('delete',$datas->id)}}">Delete</a>
                             </td>
                         </tr>
                         @endforeach
