@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Teachers;
 use App\Models\Appointments;
 use Illuminate\Http\Request;
@@ -25,10 +26,11 @@ class AdminController extends Controller
     }
 
     public function ShowTeacherDetails(){
-        $data=teachers::paginate(6);
+        $data=Teachers::paginate(6);
         
         return view('admin.Teacher_Profile',compact('data'));
     }
+
     public function upload(Request $request){
         $teacher= new Teachers;
         $image=$request->image;
@@ -121,7 +123,7 @@ class AdminController extends Controller
         return view('admin.Update_Profile',compact('data'));
     }
 
-   public function editTeacher(Request $request,$id){
+    public function editTeacher(Request $request,$id){
 
         $teacher= teachers::find($id);
 
@@ -173,6 +175,11 @@ class AdminController extends Controller
 
         $teacher->save();
         return redirect()->back()->with('message','Teacher data updated successfully!');
+    }
+
+    public function showUser(){
+        $user = User::paginate(6);
+        return view('admin.Show_Users',compact('user'));
     }
 }
 

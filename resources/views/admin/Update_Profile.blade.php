@@ -20,7 +20,7 @@
   <div class="container mt-5">
     @if(session()->has('message'))
     <div class="alert alert-success">
-      <button type="button" class="close" data-bs-dismiss="alert">
+      <button type="button" class="close" data-dismiss="alert">
         x
       </button>
       {{ session()->get('message') }}

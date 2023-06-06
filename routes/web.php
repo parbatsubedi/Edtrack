@@ -15,7 +15,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-// Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'index']);
 Route::get('/',[HomeController::class,'redirect']);
 
 Route::middleware([
@@ -50,3 +50,4 @@ Route::get('/update/{id}',[AdminController::class,'update']);
 Route::post('/editTeacher/{id}',[AdminController::class,'editTeacher']);
 
 // Route::get('/news',[HomeController::class,'news']);
+Route::get('/show_user',[AdminController::class,'showUser']);

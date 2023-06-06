@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function redirect(){
+        $teacher = Teachers::all();
         if (Auth::id())
         {
             if(Auth::user()->usertype =='0')
@@ -18,57 +19,37 @@ class HomeController extends Controller
                 $teacher = teachers::all();
                 return view('user.home', compact('teacher'));
             }
-            else
+            elseif(Auth::user()->usertype =='1')
             {
                 return view('admin.home');
             }
         }
 
         else{
-            return redirect()->back();
+            return view('user.home',compact('teacher'));
         }
     }
 
     public function index()
     {
         $teacher = Teachers::all();
+        if (Auth::id())
+        {
+            if(Auth::user()->usertype =='0')
+            {
+                $teacher = teachers::all();
+                return view('user.home', compact('teacher'));
+            }
+            elseif(Auth::user()->usertype =='1')
+            {
+                return view('admin.home');
+            }
+        }
+
+        else{
+            return view('user.home',compact('teacher'));
+        }
     
-        // foreach ($teacher as $teachers) {
-        //     $departmentFolder = '';
-    
-        //     // Determine the department folder based on the teacher's department
-        //     switch ($teachers->department) {
-        //         case 'HeadOfCampus':
-        //             $departmentFolder = 'HeadOfCampusFolder';
-        //             break;
-        //         case 'IT':
-        //             $departmentFolder = 'ITFolder';
-        //             break;
-        //         case 'Science':
-        //             $departmentFolder = 'ScienceFolder';
-        //             break;
-        //         case 'Management':
-        //             $departmentFolder = 'ManagementFolder';
-        //             break;
-        //         case 'Humanities':
-        //             $departmentFolder = 'HumanitiesFolder';
-        //             break;
-        //         case 'Law':
-        //             $departmentFolder = 'LawFolder';
-        //             break;
-        //         default:
-        //             $departmentFolder = 'defaultFolder';
-        //             break;
-        //     }
-    
-        //     // Get the image file name from the image path
-        //     $imageName = basename($teachers->image);
-    
-        //     // Update the image path with the department folder and file name
-        //     $teachers->image = asset("teacherImage/$departmentFolder/$imageName");
-        // }
-    
-        return view('user.home', compact('teacher'));
     }
     
 

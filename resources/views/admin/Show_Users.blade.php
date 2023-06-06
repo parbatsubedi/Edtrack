@@ -69,41 +69,37 @@
         @include('admin.layout.navbar')
         <div class="container-fluid page-body-wrapper">
             <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
-                <h1 class="text-center mt-4">Teacher Details</h1>
-                {{ $data->links() }} 
+                <h1 class="text-center mt-4">User Details</h1>
+                {{ $user->links() }} 
                 <table class="table table-striped table-bordered table-sm">
                     <thead>
                         <tr>
                             <th scope="col">S. No.</th>
-                            <th scope="col">Teacher Name</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Department</th>
-                            <th scope="col">Room No</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Email No</th>
                             <th scope="col">Created At</th>
-                            <th scope="col">Updated At</th>
+                            <th scope="col">Email Verified At</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                     @php
+                    @php
                         $i = 1;
                     @endphp
-                        @foreach ($data as $datas)
+                        @foreach ($user as $users)
                         <tr>
-                            <th scope="row">{{$i++}}</th>
-                            <td>{{$datas->name}}</td>
-                            <td>{{$datas->phone}}</td>
-                            <td>{{$datas->department}}</td>
-                            <td>{{$datas->room}}</td>
+                            <td>{{$i++}}</td>
+                            <td>{{$users->name}}</td>
+                            <td>{{$users->phone}}</td>
+                            <td>{{$users->address}}</td>
+                            <td>{{$users->email}}</td>
+                            <td>{{$users->created_at}}</td>
+                            <td>{{$users->email_verified_at}}</td>
                             <td>
-                                <img class="enlarge-image" src="{{$datas->image}}" style="height: 50px; width: 50px;">
-                            </td>
-                            <td>{{$datas->created_at}}</td>
-                            <td>{{$datas->updated_at}}</td>
-                            <td>
-                                <a class="btn btn-success btn-sm" href="{{url('view',$datas->id)}}">View</a>
-                                <a class="btn btn-danger btn-sm" onclick="return confirm('are you sure to Delete Teacher!!!')" href="{{url('delete',$datas->id)}}">Delete</a>
+                                <a class="btn btn-success btn-sm" href="{{url('view',$users->id)}}">View</a>
+                                <a class="btn btn-danger btn-sm" onclick="return confirm('are you sure to Delete Teacher!!!')" href="{{url('delete',$users->id)}}">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -111,27 +107,6 @@
                 </table>
             </div>
         </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var enlargeImages = document.querySelectorAll('.enlarge-image');
-                enlargeImages.forEach(function(image) {
-                    image.addEventListener('click', function() {
-                        var src = this.getAttribute('src');
-                        var enlargedImageContainer = document.createElement('div');
-                        enlargedImageContainer.className = 'enlarged-image-container';
-                        enlargedImageContainer.addEventListener('click', function() {
-                            this.remove();
-                        });
-                        var enlargedImage = document.createElement('img');
-                        enlargedImage.className = 'enlarged-image';
-                        enlargedImage.src = src;
-                        enlargedImageContainer.appendChild(enlargedImage);
-                        document.body.appendChild(enlargedImageContainer);
-                    });
-                });
-            });
-        </script>
 
         @include('admin.layout.footer')
     </div>

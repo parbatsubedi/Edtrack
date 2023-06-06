@@ -61,23 +61,20 @@
           </div>
         </form>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+        {{--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>  --}}
 
         <div class="collapse navbar-collapse" id="navbarSupport" style="visibility: visible !important;">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url('/')}}">Home</a>
+              <a class="nav-link" href="{{url('/home')}}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('/')}}">About Us</a>
             </li>
-            {{--  <li class="nav-item">
-              <a class="nav-link" href="{{url('/')}}">Doctors</a>
-            </li>  --}}
             <li class="nav-item">
-              <a class="nav-link" href="{{url('/news')}}">News</a>
+              <a class="nav-link" href="{{url('/')}}">News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('/')}}">Contact</a>
@@ -162,7 +159,7 @@
           <div class="col-lg-6 py-3 wow fadeInUp">
             <h1>Lorem Ipsum <br> Lorem</h1>
             <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
-            <a href="about.html" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
             <div class="img-place custom-img-1">
@@ -180,7 +177,7 @@
 
   
   <footer class="page-footer">
-    <div class="container">
+    <div class="container" id="aboutUS">
       <div class="row px-md-3">
         <div class="col-sm-6 col-lg-3 py-3">
           <h5>About</h5>
