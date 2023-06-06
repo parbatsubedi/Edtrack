@@ -7,6 +7,9 @@ use App\Models\Teachers;
 use App\Models\Appointments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\SendEmailNotification;
+use Illuminate\Support\Facades\Notification;
+use Notifications;
 
 class AdminController extends Controller
 {
@@ -181,6 +184,27 @@ class AdminController extends Controller
         $user = User::paginate(6);
         return view('admin.Show_Users',compact('user'));
     }
+
+    public function emailview($id){
+        $data= appointments::find($id);
+        return view('admin.email_view',compact('data'));
+    }
+
+    public function sendEmail(Request $request,$id){
+        $data = appointments::find($id);
+
+        $details=[
+            'greetings'=> $request->greeting,
+            'body'=> $request->body,
+            'actiontext'=> $request->actiontext,
+            'actionurl'=> $request->actionurl,
+            'endpart'=> $request->endpart,
+        ];
+
+        Notification::send($data,new sendEmailNotification($details));
+
+        return redirect()->back()->with('message','Email sent successfully!');
+    } 
 }
 
 
