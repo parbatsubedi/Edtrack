@@ -51,3 +51,9 @@ Route::post('/editTeacher/{id}',[AdminController::class,'editTeacher']);
 
 // Route::get('/news',[HomeController::class,'news']);
 Route::get('/show_user',[AdminController::class,'showUser']);
+
+//send email
+Route::get('/emailview/{id}',[AdminController::class,'emailview']);
+
+
+Route::post('/sendemail/{id}',[AdminController::class,'sendEmail']);

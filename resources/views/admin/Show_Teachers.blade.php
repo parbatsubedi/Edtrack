@@ -70,7 +70,7 @@
         <div class="container-fluid page-body-wrapper">
             <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                 <h1 class="text-center mt-4">Teacher Details</h1>
-                {{ $data->links() }} 
+                {{--  {{ $data->links() }}   --}}
                 <table class="table table-striped table-bordered table-sm">
                     <thead>
                         <tr>
