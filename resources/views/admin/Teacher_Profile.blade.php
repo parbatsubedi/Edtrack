@@ -120,6 +120,7 @@
                                 <img src="{{$data->image}}" alt="avatar" class="rounded-circle img-fluid">
                             </div>
                             <h5 class="my-3">{{$data->name}}</h5>
+                            <p class="text-muted">{{$data->email}}</p>
                             <p class="text-muted">{{$data->phone}}</p>
                             <div class="edit-profile-button">
                                 <a href="{{url('update',$data->id)}}" class="btn btn-primary">Edit Profile</a>

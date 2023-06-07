@@ -76,6 +76,7 @@
                         <tr>
                             <th scope="col">S. No.</th>
                             <th scope="col">Teacher Name</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Department</th>
                             <th scope="col">Room No</th>
@@ -93,6 +94,7 @@
                         <tr>
                             <th scope="row">{{$i++}}</th>
                             <td>{{$datas->name}}</td>
+                            <td>{{$datas->email}}</td>
                             <td>{{$datas->phone}}</td>
                             <td>{{$datas->department}}</td>
                             <td>{{$datas->room}}</td>

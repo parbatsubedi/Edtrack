@@ -33,6 +33,10 @@
         <input type="text" name="name" class="form-control" id="fullName" placeholder="Enter your full name" required>
       </div>
       <div class="form-group">
+        <label for="RoomNo">Email</label>
+        <input type="email" name="email" class="form-control" id="emali" placeholder="Enter your room Email" required>
+      </div>
+      <div class="form-group">
         <label for="Phone">Phone Number</label>
         <input type="tel" name="phone" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
       </div>
