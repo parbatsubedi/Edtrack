@@ -98,7 +98,7 @@
                             <td>{{$users->created_at}}</td>
                             <td>{{$users->email_verified_at}}</td>
                             <td>
-                                <a class="btn btn-success btn-sm" href="{{url('view',$users->id)}}">View</a>
+                                {{--  <a class="btn btn-success btn-sm" href="{{url('view',$users->id)}}">View</a>  --}}
                                 <a class="btn btn-danger btn-sm" onclick="return confirm('are you sure to Delete Teacher!!!')" href="{{url('delete',$users->id)}}">Delete</a>
                             </td>
                         </tr>
