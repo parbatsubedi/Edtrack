@@ -14,14 +14,17 @@ use Notifications;
 class AdminController extends Controller
 {
     public function addview(){
+        
         if (Auth::id())
         {
             if(Auth::user()->usertype =='1')
             {
             return view('admin.add_teacher');
+            }else{
+                return view('user.home');
             }
         }else{
-            return view('login');
+            return view('user.home');
         }
     }
 

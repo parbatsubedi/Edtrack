@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function redirect(){
+    public function redirect()
+    {
         $teacher = Teachers::all();
         if (Auth::id())
         {
@@ -45,15 +46,12 @@ class HomeController extends Controller
                 return view('admin.home');
             }
         }
-
-        else{
-            return view('user.home',compact('teacher'));
-        }
-    
+            return view('user.teachers',compact('teacher'));    
     }
     
 
-    public function appointment(Request $request){
+    public function appointment(Request $request)
+    {
         $data = new appointments;
 
         $data->name=$request->name;
@@ -71,7 +69,8 @@ class HomeController extends Controller
 
     }
 
-    public function myAppointments(){
+    public function myAppointments()
+    {
         if(Auth::id()){
             $userid=Auth::user()->id;
             $appointments= appointments::where('user_id',$userid )->get();
@@ -81,7 +80,8 @@ class HomeController extends Controller
         }
     }
 
-    public function cancel_appointments($id){
+    public function cancel_appointments($id)
+    {
         $data = appointments::find($id);
         $data->delete();
         return redirect()->back()->with('message','Appointments Cancelled successfully');
