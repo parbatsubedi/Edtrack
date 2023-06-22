@@ -79,6 +79,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{url('/')}}">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('/visitor')}}">VISITOR</a>
+            </li>
             @if(Route::has('login'))
             @auth
             <li class="nav-item">
@@ -100,6 +103,98 @@
       </div> <!-- .container -->
     </nav>
   </header>
+  <!-- Modal -->
+  {{--  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalTitle">Welcome to our website!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you a visitor?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" >Yes</button>
+          <button type="button" class="btn btn-primary" >No</button>
+        </div>
+      </div>
+    </div>
+  </div>  --}}
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalTitle">Welcome to our website!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you a visitor?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="showNextModal()">Yes</button>
+          <button type="button" class="btn btn-primary" onclick="showVisitPopup()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="visitModal" tabindex="-1" role="dialog" aria-labelledby="visitModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="visitModalTitle">Visit Our College!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Do you want to visit our college?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="showContactModal()">Yes</button>
+          <button type="button" class="btn btn-primary" onclick="showExploreModal()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalTitle">Contact Us!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Great! Contact us for more information.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exploreModal" tabindex="-1" role="dialog" aria-labelledby="exploreModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exploreModalTitle">Explore Our Website!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Thank you! Feel free to explore our website.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   @if(session()->has('message'))
   <div class="alert alert-success">
@@ -113,9 +208,6 @@
   <div class="page-hero bg-image overlay-dark" style="background-image: url(..\assets\img\aadim.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
-        {{--  <span class="subhead">Let's make your life happier</span>
-        <h1 class="display-4">Healthy Living</h1>
-        <a href="#" class="btn btn-primary">Let's Consult</a>  --}}
       </div>
     </div>
   </div>
@@ -133,22 +225,6 @@
               <p><span>Be familiar</span> with a Faculty Members</p>
             </div>
           </div>
-          {{--  <div class="col-md-4 py-3 py-md-0">
-            <div class="card-service wow fadeInUp">
-              <div class="circle-shape bg-primary text-white">
-                <span class="mai-shield-checkmark"></span>
-              </div>
-              <p><span>One</span></p>
-            </div>
-          </div>  --}}
-          {{--  <div class="col-md-4 py-3 py-md-0">
-            <div class="card-service wow fadeInUp">
-              <div class="circle-shape bg-accent text-white">
-                <span class="mai-basket"></span>
-              </div>
-              <p><span>One</span>-Health Pharmacy</p>
-            </div>
-          </div>  --}}
         </div>
       </div>
     </div> <!-- .page-section -->

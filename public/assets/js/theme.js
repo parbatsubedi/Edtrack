@@ -64,3 +64,36 @@ $('document').ready(function() {
   new WOW().init();
 });
 
+$(document).ready(function() {
+  // Show the first modal on page load
+  $('#myModal').modal('show');
+});
+
+function showNextModal() {
+  // Hide the current modal
+  $('#myModal').modal('hide');
+  // Show the next modal
+  $('#visitModal').modal('show');
+}
+
+function showVisitPopup() {
+  // Hide the current modal
+  $('#myModal').modal('hide');
+  // Show the next modal
+  $('#visitModal').modal('show');
+}
+
+function showContactModal() {
+  // Hide the current modal
+  $('#visitModal').modal('hide');
+  // Show the contact modal
+  $('#contactModal').modal('show');
+}
+
+function showExploreModal() {
+  // Hide the current modal
+  $('#visitModal').modal('hide');
+  // Show the explore modal
+  $('#exploreModal').modal('show');
+}
+
